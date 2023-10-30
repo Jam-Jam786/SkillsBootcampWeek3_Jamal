@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&family=Roboto+Condensed:wght@100&family=Roboto:wght@100&display=swap');
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,21 +9,64 @@
 <body>
     <div class="question-container">
     <h2 id="question1">who is your favorite tutor?</h2>
+    <h3 id="print-answer"></h3>
     </div>
 
     <div class="answer-container">
-      <button class="answer-button">matt</button>
+      <!-- <button class="answer-button">matt</button>
       <button class="answer-button">ash ketcham</button>
-      <button class="answer-button">red ranger</button>
+      <button class="answer-button">red ranger</button> -->
+      <div id ="Answer" class = "answer-container">
+
+        <div>
+
     </div>
+
     <script>
-        let exampleDictionary ={
-            "name" : "matt",
-            "job" : "tutor",
-            "age" : 25
+        // let exampleDictionary ={
+        //     "name" : "matt",
+        //     "job" : "tutor",
+        //     "age" : 25
+        // }
+
+        // alert(exampleDictionary["name"])
+
+        let question = {
+            "question" : "what's the best football team in the world?",
+            "possible" : ["Liverpool", "Liverpool Reserves", "Manchester"],
+            "answer" : "Liverpool"
+        }
+        //      THIS CHANGES THE QUESTION TO THE ONE in the dictionary
+            let h2Element = document.getElementById("question1")
+            h2Element.innerHTML = question["question"]
+        // document.getElementById("question1").innerHTML = question["question"]
+        for (let i = 0; i < question["possible"].length; i++){
+            //      variable that is possibleAnswer equal to question value of i
+            let possibleAnswer = question["possible"][i]
+            //      creating new button variable then equaling to a node
+            let newButton = document.createElement("button")
+            // newButton.className.add("Answer-button")
+            //      creating a class
+            newButton.classList.add("Answer-button")
+            //      inserting a answer for the dictionary
+            newButton.innerHTML = possibleAnswer
+            // alert(newButton.innerHTML)
+            //      adding a new child element to the dive
+            newButton.onclick = function(){
+                let feedbackText = document.getElementById("print-answer")
+                if(possibleAnswer == question["answer"]){
+                feedbackText.innerHTML = "correct"
+                }else{
+                feedbackText.innerHTML = "incorrect"
+                }
+            }
+            
+            document.getElementById("Answer").appendChild(newButton)
+            
+            
         }
 
-        alert(exampleDictionary["name"])
+
     </script>
     
 </body>
