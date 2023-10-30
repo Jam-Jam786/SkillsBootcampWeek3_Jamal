@@ -16,7 +16,7 @@
       <!-- <button class="answer-button">matt</button>
       <button class="answer-button">ash ketcham</button>
       <button class="answer-button">red ranger</button> -->
-      <div id ="Answer" class = "answer-container">
+      <div id ="question-text" class = "answer-container">
 
         <div>
 
@@ -31,11 +31,30 @@
 
         // alert(exampleDictionary["name"])
 
-        let question = {
+        let question1 = {
             "question" : "what's the best football team in the world?",
             "possible" : ["Liverpool", "Liverpool Reserves", "Manchester"],
             "answer" : "Liverpool"
         }
+
+        let question2 = {
+            "question" : "Best starter pokemon??",
+            "possible" : ["Charmander", "Bulbasaur", "Squirtle"],
+            "answer" : "Charmander"
+        }
+
+        let question3 = {
+            "question" : "best Disney show?",
+            "possible" : ["Lilo and stitch", "Kim possible", "Wizards of wavley place"],
+            "answer" : "Kim possible"
+        }
+
+        const allTheQuestions = [question1, question2, question3]
+        let currentQuestion = 0
+
+        function setQuestions(){
+            document.getElementById("question-text").innerHTML = ""
+            question = allTheQuestions[currentQuestion]
         //      THIS CHANGES THE QUESTION TO THE ONE in the dictionary
             let h2Element = document.getElementById("question1")
             h2Element.innerHTML = question["question"]
@@ -47,7 +66,7 @@
             let newButton = document.createElement("button")
             // newButton.className.add("Answer-button")
             //      creating a class
-            newButton.classList.add("Answer-button")
+            newButton.className = "answer-button"
             //      inserting a answer for the dictionary
             newButton.innerHTML = possibleAnswer
             // alert(newButton.innerHTML)
@@ -56,16 +75,24 @@
                 let feedbackText = document.getElementById("print-answer")
                 if(possibleAnswer == question["answer"]){
                 feedbackText.innerHTML = "correct"
+                    if(currentQuestion == allTheQuestions.length - 1){
+                        currentQuestion = 0
+                    }else{
+                        currentQuestion++}
+                setQuestions()
                 }else{
                 feedbackText.innerHTML = "incorrect"
                 }
+
             }
             
-            document.getElementById("Answer").appendChild(newButton)
+            document.getElementById("question-text").appendChild(newButton)
             
             
         }
+        }
 
+        setQuestions()
 
     </script>
     
