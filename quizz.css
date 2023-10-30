@@ -1,0 +1,45 @@
+/* .questions */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&family=Roboto+Condensed:wght@100&family=Roboto:wght@100&display=swap');
+
+
+
+
+.answer-button{
+    background-color: #4CAF50; /* Green */
+    border: none; */
+    color: white; */
+    padding: 15px 32px; */
+    text-align: center; */
+    text-decoration: none; */
+    display: inline-block; */
+    font-size: 16px; */ 
+}
+
+
+body{
+    display: flex;
+    flex: 1;
+    height: 90vh;
+    width: 80vw;
+    background-color: rgb(34, 123, 201);
+    flex-direction: column;
+
+}
+
+.question-container{
+    flex: 0.5;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.answer-container{
+    flex: 0.5;
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
