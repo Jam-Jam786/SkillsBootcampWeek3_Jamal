@@ -23,7 +23,9 @@
     </div>
 
     <script>
+        // named a variable 
          let allTheQuestions = []
+        // 
         async function getQuestion(){
             const response = await fetch ("https://opentdb.com/api.php?amount=10&category=9&difficulty=hard&type=multiple")
             let data = await response.json()
