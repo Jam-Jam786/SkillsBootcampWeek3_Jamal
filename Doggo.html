@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doggo</title>
+</head>
+<body>
+    <img id="dogPicture" width="400px" height="400px" onclick="getRandomDog()">
+    <script>
+        async function getRandomDog(){
+            const response = await fetch("https://dog.ceo/api/breeds/image/random")
+            let dogData = await response.json()
+            console.log(dogData)
+            document.getElementById("dogPicture").src = dogData.message
+            on.click.getRandomDog()
+        }
+        getRandomDog()
+    </script>
+</body>
+</html>

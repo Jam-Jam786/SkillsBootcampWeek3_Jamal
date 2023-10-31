@@ -76,7 +76,11 @@ let acc1 = new bankAccount(100,112233, 12345678, "Sally Smith")
 //  TASK 5
 // using a for loop, simulate 5 years of compound interest on account1 with a fixed interest rate of 4%
 
+let accounts = []
 for(let i = 1; i <= 5; i++){
     acc1.annualInterest()
     console.log(`year ${i} ` + acc1.getDescription())
+    let newAccount = new bankAccount(Math.floor(Math.random() * 100000), 112233, 123456)
+    accounts.push(newAccount)
+    console.log(accounts[i])
 }
