@@ -33,7 +33,7 @@ class bankAccount{
     }
     }
 
-    // step 4
+    // step 5
     // add a method called annualInterest, which should inflate the balance by a certain percentage
     // start by the method always adding 5% interest
     // e.g. on an account with 100 balance calling acc1.anuualInterest() will make the balance 105
@@ -42,7 +42,7 @@ class bankAccount{
 
     
     annualInterest(){
-    this.interestRate = 0.03
+    this.interestRate = 0.04
     this.newAnualInterest = this.balance * this.interestRate
     this.balance += this.newAnualInterest
     return this.balance
@@ -66,9 +66,17 @@ let acc1 = new bankAccount(100,112233, 12345678, "Sally Smith")
 // console.log(acc1.balance)
 // acc1.modifyBalance(-1500)
 
-console.log(acc1.balance)
-// console.log(acc2.balance)
-// console.log(acc1.holder)
-// console.log(acc1.getDescription())
-// console.log(acc2.getDescription())
-console.log(acc1.annualInterest())
+// console.log(acc1.balance)
+// // console.log(acc2.balance)
+// // console.log(acc1.holder)
+// // console.log(acc1.getDescription())
+// // console.log(acc2.getDescription())
+// console.log(acc1.annualInterest())
+
+//  TASK 5
+// using a for loop, simulate 5 years of compound interest on account1 with a fixed interest rate of 4%
+
+for(let i = 1; i <= 5; i++){
+    acc1.annualInterest()
+    console.log(`year ${i} ` + acc1.getDescription())
+}
