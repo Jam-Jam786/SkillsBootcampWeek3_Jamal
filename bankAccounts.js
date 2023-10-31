@@ -29,9 +29,25 @@ class bankAccount{
     console.log("exceeded overdraft limit")
     
     }else{
-        this.blance +=deposit
+        this.blance += deposit
     }
     }
+
+    // step 4
+    // add a method called annualInterest, which should inflate the balance by a certain percentage
+    // start by the method always adding 5% interest
+    // e.g. on an account with 100 balance calling acc1.anuualInterest() will make the balance 105
+    // once this working, modift so the interest is a parameter,
+    // e.g. acc1.annulInterest(3) would inflate balancec by 3%
+
+    
+    annualInterest(){
+    this.interestRate = 0.03
+    this.newAnualInterest = this.balance * this.interestRate
+    this.balance += this.newAnualInterest
+    return this.balance
+    }
+
 
     // Step 3
     // add a method called getDescription, it should output a sentance that describes this account.
@@ -45,12 +61,14 @@ class bankAccount{
 
 
 
-let acc1 = new bankAccount(1000,112233, 12345678, "Sally Smith")
+let acc1 = new bankAccount(100,112233, 12345678, "Sally Smith")
 // let acc2 = new bankAccount(-5000, 112233, 23456789, "John Smith")
-console.log(acc1.balance)
-acc1.modifyBalance(-1501)
+// console.log(acc1.balance)
+// acc1.modifyBalance(-1500)
+
 console.log(acc1.balance)
 // console.log(acc2.balance)
 // console.log(acc1.holder)
 // console.log(acc1.getDescription())
 // console.log(acc2.getDescription())
+console.log(acc1.annualInterest())
