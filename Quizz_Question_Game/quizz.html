@@ -23,12 +23,14 @@
     </div>
 
     <script>
-
+         let allTheQuestions = []
         async function getQuestion(){
             const response = await fetch ("https://opentdb.com/api.php?amount=10&category=9&difficulty=hard&type=multiple")
             let data = await response.json()
             console.log(data)
-            return data.results
+            //return data.results
+            allTheQuestions = data.results
+            setQuestions()
         }
         getQuestion()
 
@@ -58,31 +60,41 @@
         //     "answer" : "Kim possible"
         // }
 
-        const allTheQuestions = getQuestion()
+       
+        console.log(allTheQuestions)
         let currentQuestion = 0
 
         function setQuestions(){
             document.getElementById("question-text").innerHTML = ""
             question = allTheQuestions[currentQuestion]
-        //      THIS CHANGES THE QUESTION TO THE ONE in the dictionary
+            console.log(question)
+        // //      THIS CHANGES THE QUESTION TO THE ONE in the dictionary
             let h2Element = document.getElementById("question1")
-            h2Element.innerHTML = question["question"]
-        // document.getElementById("question1").innerHTML = question["question"]
-        for (let i = 0; i < question["possible"].length; i++){
-            //      variable that is possibleAnswer equal to question value of i
-            let possibleAnswer = question["possible"][i]
-            //      creating new button variable then equaling to a node
-            let newButton = document.createElement("button")
-            // newButton.className.add("Answer-button")
-            //      creating a class
-            newButton.className = "answer-button"
-            //      inserting a answer for the dictionary
-            newButton.innerHTML = possibleAnswer
-            // alert(newButton.innerHTML)
-            //      adding a new child element to the dive
-            newButton.onclick = function(){
+            h2Element.innerHTML = question.question
+
+            // collate all possible answers into a single array
+            let allAnswers = [...question.incorrect_answers]
+            let randomIndex = Math.floor(Math.random() * allAnswers.length)
+            allAnswers.splice(randomIndex, 0, question.correct_answer)
+            // allAnswers.push(question.correct_answer)
+            console.log(allAnswers)
+
+        document.getElementById("question1").innerHTML = question["question"]
+        for (let i = 0; i < allAnswers.length; i++){
+            // variable that is possibleAnswer equal to question value of i
+            let possibleAnswer = allAnswers[i]
+        //     //      creating new button variable then equaling to a node
+                let newButton = document.createElement("button")
+                newButton.className = allAnswers
+        //     //      creating a class
+                newButton.className = "answer-button"
+        //     //      inserting a answer for the dictionary
+                newButton.innerHTML = possibleAnswer
+        //     // alert(newButton.innerHTML)
+        //     //      adding a new child element to the dive
+                newButton.onclick = function(){
                 let feedbackText = document.getElementById("print-answer")
-                if(possibleAnswer == question["answer"]){
+                if(possibleAnswer == question.correct_answer){
                 feedbackText.innerHTML = "correct"
                     if(currentQuestion == allTheQuestions.length - 1){
                         currentQuestion = 0
@@ -95,13 +107,15 @@
 
             }
             
-            document.getElementById("question-text").appendChild(newButton)
+         document.getElementById("question-text").appendChild(newButton)
             
             
-        }
+            }
         }
 
-        setQuestions()
+        // setQuestions()
+
+        let array = []
 
     </script>
     
