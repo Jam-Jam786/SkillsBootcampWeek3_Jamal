@@ -23,11 +23,13 @@ class bankAccount{
     // add this number to the account balance
     // example - acc1.modifyBalance(150)
     modifyBalance(deposit){
-        (this.balance += deposit)
+        this.newAmmount = this.balance + deposit
         // return this.balance
-   if (this.balance < -500) {
+   if (this.newAmmount < -500) {
     console.log("exceeded overdraft limit")
-        
+    
+    }else{
+        this.blance +=deposit
     }
     }
 
