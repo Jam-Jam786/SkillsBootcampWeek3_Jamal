@@ -23,12 +23,14 @@
     </div>
 
     <script>
-        // named a variable 
+        // initialising an array
          let allTheQuestions = []
-        // 
+        // asyncronusly running function
         async function getQuestion(){
             const response = await fetch ("https://opentdb.com/api.php?amount=10&category=9&difficulty=hard&type=multiple")
+            // variable for the the waiting for response from API
             let data = await response.json()
+            // printing the data variable 
             console.log(data)
             //return data.results
             allTheQuestions = data.results
