@@ -1,4 +1,4 @@
-class bankAccount{
+
 
     // Step 1
     // modify the constructor to set an account holder name
@@ -8,6 +8,8 @@ class bankAccount{
     // modify the class so it has an overdraft limit attribute, in modifyBalance,
     // only change the value of balance if it won't exceede the overdraft limit
     // e.g. calling acc1.modifyBalance(-10000) won't work if the account has an overdraft limit of -500
+
+    class bankAccount{
     constructor(bal, sort, accNo, accountName, draftLimit){
     
     this.balance = bal
@@ -77,10 +79,11 @@ let acc1 = new bankAccount(100,112233, 12345678, "Sally Smith")
 // using a for loop, simulate 5 years of compound interest on account1 with a fixed interest rate of 4%
 
 let accounts = []
-for(let i = 1; i <= 5; i++){
+for(let i = 0; i < 5; i++){
     acc1.annualInterest()
-    console.log(`year ${i} ` + acc1.getDescription())
+    console.log(`year ${i + 1} ` + acc1.getDescription())
     let newAccount = new bankAccount(Math.floor(Math.random() * 100000), 112233, 123456)
     accounts.push(newAccount)
     console.log(accounts[i])
+
 }

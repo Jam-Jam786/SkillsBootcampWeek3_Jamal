@@ -1,0 +1,19 @@
+.setup-container{
+    background-color: blue;
+    width: 70vw;
+    height: 40vh;
+    border: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.punchline-container{
+    background-color: brown;
+    width: 70vw;
+    height: 40vh;
+    border: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
