@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loops</title>
+</head>
+<body>
+
+<div id="buttons-containers">
+
+</div>
+
+    <script>
+
+        for (let i=1; i <= 200; i++){
+            let newButton = document.createElement("button")
+            newButton.innerHTML = i
+            newButton.onclick = function(){
+                alert(i)
+            }
+            // add an onclick to the button, that makes it alert i
+            // e.g. clicking the 40 button creates a broswer alert
+            // that says 40
+            // onclick
+            document.getElementById("buttons-containers").appendChild(newButton)
+        }
+
+
+
+    </script>
+</body>
+</html>

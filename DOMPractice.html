@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="DOMPractice.css">
+    <title>DOM Practice</title>
+</head>
+<body>
+    <div id="title">
+     <h1 id="header1">gym</h1>   
+    </div>
+
+    <div id = "mainPic">
+    </div>
+
+    <div id="buttonWebsite">
+    </div>
+    
+
+    <div id="test-div">
+
+    </div>
+    <script>
+        // let aNewImage = document.createElement("img")
+        // // aNewButton.innerHTML = "this button was added with JS"
+        // aNewImage.src = " https ...."
+        // document.getElementById("test-div").appendChild(aNewImage)
+
+        // using js, add a button, an image and a heading(H1) to a page
+
+
+        // add CSS styles
+        title.className = "header"
+        
+        
+    
+
+        // element
+        // append to document
+        
+        let button = document.createElement("button")
+        button.className = "button"
+        button.innerHTML = "click here"
+
+        const colours = ["red", "green", "blue", "orange", "yellow"]
+
+        // modify the following so each click cycles the header through the above colours
+        // created a click function to change the colour
+        let colourChanges = 0
+        button.onclick = function(){
+        // document.getElementById("header1").style.color = "red"
+        // }
+        document.getElementById("header1").style.color = colours [colourChanges]
+        if(colourChanges == colours.length - 1){
+            colourChanges = 0
+        }else{
+            colourChanges++
+        }
+
+        }
+
+        document.getElementById("buttonWebsite").appendChild(button)
+        
+        
+
+        let gymPicture = document.createElement("img")
+        gymPicture.className = "image"
+        gymPicture.src = "https://lagym.uk/cdn/shop/products/LA-Gym-Card_f1686766-c592-4a4d-bd86-ebc220118bd5_1080x.jpg"
+        document.getElementById("mainPic").appendChild(gymPicture)
+
+        
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+.header{
+    color: #00beea;
+    font-weight: bold;
+}
+
+.image{
+    border-radius: 100px;
+    border: 8px solid #00beea
+}
+
+.button{
+    background-color: #00beea;
+    color: white;
+    padding: 16px;
+}
+

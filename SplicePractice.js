@@ -18,3 +18,4 @@ console.log(`random index : ${randomIndex}`);
 stuff.splice(randomIndex, 0, "banana")
 
 console.log(stuff)
+
