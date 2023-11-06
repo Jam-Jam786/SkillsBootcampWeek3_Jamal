@@ -3,3 +3,16 @@
     color: white;
     padding: 16px;
 }
+
+.odd{
+    background-color: purple;
+    color: white;
+    padding: 16px;
+}
+
+.even{
+    background-color: red;
+    color: white;
+    padding: 16px;
+}
+
